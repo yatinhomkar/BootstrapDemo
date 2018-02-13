@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CountryReportsModel2StoreContainer" CdmEntityContainer="CountryReportsEntities2">
+    <EntitySetMapping Name="FavCountryInfoes">
+      <EntityTypeMapping TypeName="CountryReportsModel2.FavCountryInfo">
+        <MappingFragment StoreEntitySet="FavCountryInfo">
+          <ScalarProperty Name="FavCountryID" ColumnName="FavCountryID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

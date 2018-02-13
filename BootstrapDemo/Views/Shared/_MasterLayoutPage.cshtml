@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Country Info</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @{ 
+        if (Session["userName"] == null)
+        {
+            Response.Redirect("~/Login/Index");
+        }
+
+    }
+
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><h4>Country Info</h4></a>
+        @*<a href="@Url.Action("Index", "Home")" class="navbar-brand">
+            <img src="~/Images/logo.png" title="title" alt="logo" />
+        </a>*@
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+                @*<li style="padding-left : 10px">Welcome User Name:@Session["userName"].ToString()</li>*@
+                <li style="padding-left : 10px">@Html.ActionLink("Logout", "Logout", "Login")</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Country Info</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
